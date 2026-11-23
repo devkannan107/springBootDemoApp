@@ -7,9 +7,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/home")
 public class HomeController {
-    @GetMapping()
-    public String home(){
-        System.out.println("called");
+    @GetMapping("/health")
+    public String health(){
         return "Welcome to our would";
     }
 
