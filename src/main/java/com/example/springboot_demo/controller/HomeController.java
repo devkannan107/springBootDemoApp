@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class HomeController {
     @GetMapping("/health")
     public String health(){
-        return "Hellow Everyone, Jenkins verifing pipe line process";
+        return "Hellow Everyone, Jenkins verified pipe line and free style process";
     }
 }
