@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: 'Git code clone'
-        run: git checkout https://github.com/devkannan107/springBootDemoApp.git
+        uses: actions/checkout@v7
 
       - name: 'list directory'
         run: ls
