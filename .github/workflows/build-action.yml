@@ -1,0 +1,11 @@
+name: Backend Springboot demo Application build and test
+on: workflow_dispatch
+jobs:
+  build-and-test-workflow-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 'list directory'
+        run: ls
+
+      - name: 'test stage'
+        run: mvn test
