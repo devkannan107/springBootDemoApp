@@ -1,4 +1,6 @@
+
 name: Backend Springboot demo Application build and test
+
 on:
   push:
     branches:
@@ -7,23 +9,35 @@ on:
 jobs:
   build-and-test-workflow-job:
     runs-on: ubuntu-latest
+
     steps:
-      - name: 'Git code clone'
+      # Step 1: Checkout GitHub repository
+      - name: Git code clone
         uses: actions/checkout@v7
 
-      - name: 'list directory'
+      # Step 2: List project directory
+      - name: List directory
         run: ls
 
-      - name: 'Java install 21'
-        uses: actions/checkout@v7
+      # Step 3: Install Java 21
+      - name: Java install 21
+        uses: actions/setup-java@v6
         with:
           distribution: temurin
           java-version: '21'
-      - run: java --version
 
-      - name: 'mvn version'
-        run:  mvn -version
-      - name: 'Java version'
-        run: java -version
+      # Step 4: Verify Java version
+      - name: Java version
+        run: java --version
 
+      # Step 5: Verify Maven version
+      - name: Maven version
+        run: mvn -version
 
+      # Step 6: Execute Maven tests
+      #- name: Maven test
+      #  run: mvn test
+
+      # Step 7: Build application
+      #- name: Maven build
+      #  run: mvn clean install -DskipTests
