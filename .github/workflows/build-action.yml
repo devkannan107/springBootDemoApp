@@ -1,7 +1,9 @@
 name: Backend Springboot demo Application build and test
-on: 
-  workflow_dispatch
-  
+on:
+  push:
+    branches:
+      - main
+
 jobs:
   build-and-test-workflow-job:
     runs-on: ubuntu-latest
@@ -12,5 +14,13 @@ jobs:
       - name: 'list directory'
         run: ls
 
+      - name: 'mvn version'
+        run:  mvn -version
+      - name: 'Java version'
+        run: java -version
+
       - name: 'test stage'
         run: mvn test
+
+      - name: 'build stage'
+        run:  mvn clean install -DskipTests=true
