@@ -6,6 +6,9 @@ jobs:
   build-and-test-workflow-job:
     runs-on: ubuntu-latest
     steps:
+      - name: 'Git code clone'
+        run: git checkout https://github.com/devkannan107/springBootDemoApp.git
+
       - name: 'list directory'
         run: ls
 
