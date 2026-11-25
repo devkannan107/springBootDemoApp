@@ -15,7 +15,7 @@ jobs:
         run: ls
 
       - name: 'Java install 21'
-      - uses: actions/checkout@v7
+        uses: actions/checkout@v7
         with:
           distribution: temurin
           java-version: '25'
