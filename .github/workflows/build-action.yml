@@ -1,5 +1,7 @@
 name: Backend Springboot demo Application build and test
-on: workflow_dispatch
+on: 
+  workflow_dispatch
+  
 jobs:
   build-and-test-workflow-job:
     runs-on: ubuntu-latest
