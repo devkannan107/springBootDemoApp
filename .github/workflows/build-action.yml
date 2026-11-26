@@ -57,7 +57,7 @@ jobs:
 
     defaults:
       run:
-        shell: powershell -ExecutionPolicy Bypass
+        shell: powershell -ExecutionPolicy Bypass -File "{0}"
 
     steps:
       - name: Git code clone
