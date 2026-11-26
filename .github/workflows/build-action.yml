@@ -52,12 +52,12 @@ jobs:
 
   # JOB 2: Deploy to Local Docker Desktop Kubernetes
   deploy-k8s-workflow-job:
-    runs-on: [self-hosted, Windows, X64]
+    runs-on: [ self-hosted, Windows, X64 ]
     needs: build-and-test-workflow-job
 
     defaults:
       run:
-        shell: pwsh
+        shell: powershell
 
     steps:
       - name: Git code clone
