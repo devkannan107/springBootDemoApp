@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: springboot-demo-gta
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: springboot-demo-gta
+
+  template:
+    metadata:
+      labels:
+        app: springboot-demo-gta
+
+    spec:
+      containers:
+        - name: springboot-demo-gta-container
+          image: devkannan107/springboot-demo-app:gta
+          imagePullPolicy: Always
+
+          ports:
+            - containerPort: 9091
+              name: http
+
+          env:
+            - name: JAVA_OPTS
+              value: "-Xmx256m -Xms128m"
+
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
