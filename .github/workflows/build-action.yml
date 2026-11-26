@@ -52,7 +52,9 @@ jobs:
 
   # JOB 2: Deploy to Local Docker Desktop Kubernetes
   deploy-k8s-workflow-job:
-    runs-on: [ self-hosted, Windows, X64 ]
+#    runs-on: [ self-hosted, Windows, X64 ]
+#    created a custom labels
+    runs-on: [ self-hosted, springboot-build ]
     needs: build-and-test-workflow-job
 
     defaults:
